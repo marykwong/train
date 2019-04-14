@@ -10,11 +10,17 @@ and the table "Current Train Schedule" updates with the Train Name, Destination,
 
 ---------------------------
 This program was built with:
+
 moment.js
+
 firebase
+
 javascript
+
 jQuery
+
 html
+
 css
 
 See the project here:

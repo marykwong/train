@@ -1,4 +1,4 @@
-# Train Scheduler
+## Train Scheduler
 ---------------------------
 The user inputs:
 - Train Name
@@ -6,7 +6,7 @@ The user inputs:
 - First Train Time
 - Frequency of train
 
-and the table "Current Train Schedule" updates with the Train Name, Destination, and Frequency that the user inputs. Next Arrival and Minutes Away will be derived using the First Train Time input by the user.
+The table "Current Train Schedule" updates with the Train Name, Destination, and Frequency that the user inputs. Next Arrival and Minutes Away will be derived using the First Train Time input by the user. 
 
 ---------------------------
 This program was built with:

@@ -26,12 +26,6 @@ var config = {
           destination = document.querySelector("#destination").value.trim();
           startTime = document.querySelector("#time").value.trim();
           frequency = document.querySelector("#frequency").value.trim();
-
-          // //session storage
-          // sessionStorage.setItem("Name", name);
-          // sessionStorage.setItem("Destination", destination);
-          // sessionStorage.setItem("Time",Tstarttime);
-          // sessionStorage.setItem("Frequency", frequency);
     
           // Code for handling the push
           dataRef.ref().push({
@@ -47,13 +41,14 @@ var config = {
         // Firebase watcher .on("child_added"
         dataRef.ref().on("child_added", function(childSnapshot) {
 
+        //get next train time/minutes away depending on start train time and frequency
           var startTime = moment(childSnapshot.val().startTime, "hh:mm").subtract(1, "years");
           var timeDif = moment().diff(moment(startTime), "minutes");
           var timeLeft = timeDif % childSnapshot.val().frequency;
           var minUntilArrival = childSnapshot.val().frequency - timeLeft;
           var nextTrain = moment().add(minUntilArrival, "minutes");
 
-                
+        //create table to display values       
             let parent = document.querySelector("#currTrain");
             let tableRow = document.createElement("tr");
             let nameEl = document.createElement("td");
@@ -72,8 +67,7 @@ var config = {
             minUntilArrivalEl.innerText = minUntilArrival;
             tableRow.appendChild(minUntilArrivalEl)
             parent.appendChild(tableRow); 
-          console.log(moment(nextTrain).format("LT"));
-          console.log(minUntilArrival);          
+                 
           
           
     

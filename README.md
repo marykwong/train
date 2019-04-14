@@ -23,4 +23,7 @@ html
 
 css
 
+--------------------------
 See the project here:
+
+https://marykwong.github.io/train/
